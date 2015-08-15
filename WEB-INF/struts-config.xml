@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+  
+    
+
+
+
+<form-beans>
+<form-bean name="AdminLoginForm" type="org.apache.struts.action.DynaActionForm">
+<form-property name="t1" type="java.lang.String" />
+<form-property name="t2" type="java.lang.String" />
+</form-bean>
+
+<form-bean name="ProfessorLoginForm" type="org.apache.struts.action.DynaActionForm">
+<form-property name="t1" type="java.lang.String" />
+<form-property name="t2" type="java.lang.String" />
+</form-bean>
+
+<form-bean name="ClassForm" type="org.apache.struts.action.DynaActionForm">
+<form-property name="t1" type="java.lang.String" />
+<form-property name="t2" type="java.lang.String" />
+</form-bean>
+
+<form-bean name="AddEmpForm" type="org.apache.struts.action.DynaActionForm">
+<form-property name="t1" type="java.lang.String" />
+<form-property name="t2" type="java.lang.String" />
+<form-property name="t3" type="java.lang.String" />
+<form-property name="t4" type="java.lang.String" />
+<form-property name="t5" type="java.lang.String" />
+<form-property name="t6" type="java.lang.String" />
+<form-property name="t7" type="java.lang.String" />
+<form-property name="t8" type="java.lang.String" />
+<form-property name="t9" type="java.lang.String" />
+<form-property name="t10" type="java.lang.String" />
+<form-property name="t11" type="java.lang.String" />
+<form-property name="t12" type="java.lang.String" />
+<form-property name="t13" type="java.lang.String" />
+
+</form-bean>
+
+
+<form-bean name="AddStdForm" type="org.apache.struts.action.DynaActionForm">
+<form-property name="t1" type="java.lang.String" />
+<form-property name="t2" type="java.lang.String" />
+<form-property name="t3" type="java.lang.String" />
+<form-property name="t4" type="java.lang.String" />
+<form-property name="t5" type="java.lang.String" />
+<form-property name="t6" type="java.lang.String" />
+<form-property name="t7" type="java.lang.String" />
+<form-property name="t8" type="java.lang.String" />
+<form-property name="t9" type="java.lang.String" />
+<form-property name="t10" type="java.lang.String" />
+<form-property name="t11" type="java.lang.String" />
+<form-property name="t12" type="java.lang.String" />
+
+</form-bean>
+
+</form-beans>
+
+<global-exceptions>
+</global-exceptions>
+
+<global-forwards>
+<forward name="welcome"  path="/Welcome.do"/>
+</global-forwards>
+
+	
+<action-mappings>
+<action path="/ChangeIndex" name="index.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/index.jsp" />
+</action>
+
+<action path="/ChangeViewAttendence" name="ViewAttendence.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ViewAttendence.jsp" />
+</action>
+
+<action path="/ChangeStudent" name="Student.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/Student.jsp" />
+</action>
+
+<action path="/ChangeViewStudent" name="ViewStudent.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ViewStudent.jsp" />
+</action>
+
+<action path="/ChangeParent" name="Parent.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/Parent.jsp" />
+</action>
+
+<action path="/ChangeViewAttendence4" name="ViewAttendence4.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ViewAttendence4.jsp" />
+</action>
+
+<action path="/ChangeViewAttendence1" name="ViewAttendence1.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ViewAttendence1.jsp" />
+</action>
+
+<action path="/ChangeViewAttendence2" name="ViewAttendence2.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ViewAttendence2.jsp" />
+</action>
+
+<action path="/ChangeViewAttendence3" name="ViewAttendence3.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ViewAttendence3.jsp" />
+</action>
+
+<action path="/ChangeAdminLogin" name="Admin.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/Admin.jsp" />
+</action>
+
+<action path="/ChangeAddStudent" name="AddStudent.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/AddStudent.jsp" />
+</action>
+
+<action path="/ChangeEmpScreen" name="ProfessorScreen.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/ProfessorScreen.jsp" />
+</action>
+
+<action path="/ChangeProfessorLogin" name="Professor.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/Professor.jsp" />
+</action>
+
+<action path="/ChangeAddEmployee" name="AddEmployee.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/AddEmployee.jsp" />
+</action>
+
+<action path="/ChangeAddClass" name="AddClass.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/AddClass.jsp" />
+</action>
+
+<action path="/ChangeAdminScreen" name="AdminScreen.jsp" parameter="method" type="com.ChangeLanguage">
+<forward name="success" path="/AdminScreen.jsp" />
+</action>
+
+<action name="AdminLoginForm" path="/AdminLogin" type="com.AdminLogin" input="/Admin.jsp" scope="request">
+<forward name="success" path="/AdminScreen.jsp" />
+<forward name="failure" path="/Admin.jsp?response=Invalid user details" />
+</action> 
+
+<action name="ClassForm" path="/AddClass" type="com.AddClass" input="/AddClass.jsp" scope="request">
+<forward name="success" path="/AddClass.jsp?response=Class details added successfully" />
+<forward name="failure" path="/AddClass.jsp?response=Error in adding class details" />
+</action> 
+
+<action name="ProfessorLoginForm" path="/ProfessorLogin" type="com.Login" input="/Professor.jsp" scope="request">
+<forward name="success" path="/ProfessorScreen.jsp" />
+<forward name="failure" path="/Professor.jsp?response=Invalid user details" />
+</action>  
+
+<action name="AddEmpForm" path="/AddEmp" type="com.AddEmp" input="/AddEmployee.jsp" scope="request">
+<forward name="success" path="/AddEmployee.jsp?response=Employee Details Added Successfully" />
+<forward name="failure" path="/AddEmployee.jsp?response=Error in adding employee details" />
+</action>  
+
+<action name="AddStdForm" path="/AddStd" type="com.AddStd" input="/AddStudent.jsp" scope="request">
+<forward name="success" path="/AddStudent.jsp?response=Student Details Added Successfully" />
+<forward name="failure" path="/AddStudent.jsp?response=Error in adding employee details" />
+</action>  
+
+
+</action-mappings>
+
+<controller processorClass="com.RequestProcessor"/>
+<message-resources parameter="com/ApplicationResource"/>
+<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+<set-property property="moduleAware" value="true" />
+</plug-in>
+    
+<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+</plug-in>
+
+</struts-config>
